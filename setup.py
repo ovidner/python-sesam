@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='sesam',
-    version='0.0.1',
+    version='0.0.2',
     py_modules=['sesam'],
     url='https://github.com/ovidner/python-sesam',
     license='MIT',
