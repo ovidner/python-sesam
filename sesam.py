@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
-from collections import namedtuple
+from __future__ import unicode_literals
+
 import uuid
+from collections import namedtuple
 
 import suds.client
 import suds.wsse
