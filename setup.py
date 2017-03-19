@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='sesam',
-    version='0.0.2',
+    version='1.0.0',
     packages=['sesam'],
     package_data={
         'sesam': ['wsdl/*.wsdl']
