@@ -87,7 +87,9 @@ class SesamStudentServiceClient(object):
 
         return SesamStudent(
             liu_id=response.LiUId,
-            email=response.EmailAddress,
+            # Sesam sometimes responds with no email address.
+            # Have brought this up with LiU, without result.
+            email=response.EmailAddress or response.LiUId + '@student.liu.se',
             nor_edu_person_lin=uuid.UUID(response.norEduPersonLIN),
             liu_lin=uuid.UUID(response.LiULIN),
             full_name=response.DisplayName,
