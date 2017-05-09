@@ -13,6 +13,6 @@ setup(
     author_email='olle@vidner.se',
     description='',
     install_requires=[
-        'zeep'
+        'zeep==1.3.*'
     ]
 )
