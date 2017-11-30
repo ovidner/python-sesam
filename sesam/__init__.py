@@ -68,19 +68,19 @@ class StudentServiceClient:
         if mifare_id:
             mifare_id = str(mifare_id).lstrip('0')
 
+        identity = dict(
+            IsoNumber=iso_id,
+            LiUId=liu_id,
+            MifareNumber=mifare_id,
+            norEduPersonLIN=nor_edu_person_lin,
+            norEduPersonNIN=nor_edu_person_nin
+        )
+
         try:
-            response = self._zeep_client.service.GetStudent(dict(
-                Identity=dict(
-                    IsoNumber=iso_id,
-                    LiUId=liu_id,
-                    MifareNumber=mifare_id,
-                    norEduPersonLIN=nor_edu_person_lin,
-                    norEduPersonNIN=nor_edu_person_nin
-                )
-            ))
+            response = self._zeep_client.service.GetStudent(dict(Identity=identity))
         except Error as exc:
             if NOT_FOUND_MESSAGE in exc.message:
-                raise StudentNotFound(message='Student not found') from exc
+                raise StudentNotFound(message=f'Student not found: {identity}') from exc
             raise exc
 
         return Student(
