@@ -14,6 +14,6 @@ setup(
     description='',
     install_requires=[
         'attrs==17.*',
-        'zeep==2.4.*'
+        'zeep==2.*',
     ]
 )
