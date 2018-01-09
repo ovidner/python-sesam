@@ -1,14 +1,23 @@
 [[source]]
+
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
+
 [requires]
+
 python_version = "3.6"
 
+
 [packages]
-"e1839a8" = {path = ".", editable = true}
+
+"sesam" = {path = ".", editable = true}
+
 
 [dev-packages]
+
 pytest = "*"
 responses = "*"
+twine = "*"
+wheel = "*"
